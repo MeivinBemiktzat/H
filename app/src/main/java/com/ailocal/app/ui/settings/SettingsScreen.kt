@@ -10,8 +10,8 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.material3.Button
-import androidx.compose.material3.Divider
 import androidx.compose.material3.ExperimentalMaterial3Api
+import androidx.compose.material3.HorizontalDivider
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.OutlinedTextField
 import androidx.compose.material3.Slider
@@ -121,7 +121,7 @@ fun SettingsScreen() {
                 minLines = 3
             )
 
-            Divider(modifier = Modifier.padding(vertical = 16.dp))
+            HorizontalDivider(modifier = Modifier.padding(vertical = 16.dp))
 
             Text(stringResource(R.string.settings_tts_section), style = MaterialTheme.typography.titleMedium)
             Row(
@@ -147,7 +147,7 @@ fun SettingsScreen() {
                 onChange = { v -> scope.launch { repository.updateTtsSettings { it.copy(pitch = v) } } }
             )
 
-            Divider(modifier = Modifier.padding(vertical = 16.dp))
+            HorizontalDivider(modifier = Modifier.padding(vertical = 16.dp))
 
             Button(onClick = { scope.launch { repository.resetToDefaults() } }) {
                 Text(stringResource(R.string.settings_reset_defaults))
