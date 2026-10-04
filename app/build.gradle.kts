@@ -1,3 +1,6 @@
+import java.util.Properties
+import java.io.FileInputStream
+
 plugins {
     id("com.android.application")
     id("org.jetbrains.kotlin.android")
@@ -44,8 +47,8 @@ android {
             // generated at CI time. See .github/workflows/build.yml and keystore.properties.gradle.
             val keystorePropsFile = rootProject.file("keystore.properties")
             if (keystorePropsFile.exists()) {
-                val props = java.util.Properties()
-                props.load(keystorePropsFile.inputStream())
+                val props = Properties()
+                FileInputStream(keystorePropsFile).use { props.load(it) }
                 storeFile = file(props["storeFile"] as String)
                 storePassword = props["storePassword"] as String
                 keyAlias = props["keyAlias"] as String
