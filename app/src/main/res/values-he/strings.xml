@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">AI מקומי</string>
+
+    <string name="nav_chat">צ\'אט</string>
+    <string name="nav_conversations">שיחות</string>
+    <string name="nav_actions">פעולות</string>
+    <string name="nav_models">מודלים</string>
+    <string name="nav_settings">הגדרות</string>
+
+    <string name="chat_input_hint">הקלד הודעה…</string>
+    <string name="chat_send">שליחה</string>
+    <string name="chat_mic">הקלטה קולית</string>
+    <string name="chat_stop">עצירה</string>
+    <string name="chat_thinking">המודל חושב…</string>
+    <string name="chat_transcribing">מתמלל…</string>
+    <string name="chat_no_model">לא נבחר מודל. עברו למסך המודלים כדי לבחור קובץ GGUF.</string>
+    <string name="chat_new_conversation">שיחה חדשה</string>
+
+    <string name="models_title">בחירת מודל</string>
+    <string name="models_pick_file">בחר קובץ GGUF</string>
+    <string name="models_active">מודל פעיל</string>
+    <string name="models_none_active">אין מודל טעון</string>
+    <string name="models_load">טען מודל</string>
+    <string name="models_unload">פרוק מודל</string>
+    <string name="models_loading">טוען מודל…</string>
+    <string name="models_size">גודל</string>
+    <string name="models_location">מיקום</string>
+    <string name="models_family">משפחת מודל</string>
+    <string name="models_context_length">אורך הקשר</string>
+    <string name="models_unsupported">המודל אינו נתמך על ידי המנוע. נסה קובץ GGUF אחר.</string>
+    <string name="models_load_failed">טעינת המודל נכשלה: %1$s</string>
+    <string name="models_empty_state">לא נבחר אף מודל עדיין. לחצו למטה כדי לבחור קובץ GGUF מהאחסון.</string>
+
+    <string name="settings_title">הגדרות</string>
+    <string name="settings_llm_section">פרמטרים של המודל</string>
+    <string name="settings_temperature">Temperature</string>
+    <string name="settings_top_p">Top P</string>
+    <string name="settings_top_k">Top K</string>
+    <string name="settings_max_tokens">Max Tokens</string>
+    <string name="settings_context_size">Context Size</string>
+    <string name="settings_threads">Threads</string>
+    <string name="settings_batch_size">Batch Size</string>
+    <string name="settings_seed">Seed</string>
+    <string name="settings_system_prompt">System Prompt</string>
+    <string name="settings_stats_section">סטטיסטיקות ריצה</string>
+    <string name="settings_tokens_per_sec">טוקנים לשנייה</string>
+    <string name="settings_load_time">זמן טעינת מודל</string>
+    <string name="settings_gen_time">זמן יצירת תשובה</string>
+    <string name="settings_mem_usage">שימוש משוער בזיכרון</string>
+    <string name="settings_tts_section">הקראה קולית (TTS)</string>
+    <string name="settings_tts_enabled">הפעלת הקראה</string>
+    <string name="settings_tts_rate">מהירות דיבור</string>
+    <string name="settings_tts_pitch">גובה קול (Pitch)</string>
+    <string name="settings_tts_voice">בחירת קול</string>
+    <string name="settings_tts_no_hebrew">לא נמצא קול עברי במכשיר. ניתן להתקין קול עברי דרך הגדרות הקראה של אנדרואיד.</string>
+    <string name="settings_stt_section">זיהוי דיבור (Speech-to-Text)</string>
+    <string name="settings_stt_engine">מנוע זיהוי דיבור</string>
+    <string name="settings_reset_defaults">איפוס לברירות מחדל</string>
+
+    <string name="conversations_title">שיחות</string>
+    <string name="conversations_search_hint">חיפוש בשיחות…</string>
+    <string name="conversations_rename">שינוי שם</string>
+    <string name="conversations_delete">מחיקה</string>
+    <string name="conversations_export">ייצוא</string>
+    <string name="conversations_import">ייבוא</string>
+    <string name="conversations_delete_all">מחיקת כל ההיסטוריה</string>
+    <string name="conversations_empty">אין עדיין שיחות שמורות.</string>
+
+    <string name="actions_title">פעולות</string>
+    <string name="actions_apps_category">אפליקציות</string>
+    <string name="actions_system_category">מערכת</string>
+    <string name="actions_media_category">מדיה</string>
+    <string name="actions_time_category">זמן והתראות</string>
+    <string name="actions_device_category">מידע מהמכשיר</string>
+    <string name="actions_files_category">קבצים</string>
+
+    <string name="confirm_title">אישור פעולה</string>
+    <string name="confirm_cancel">ביטול</string>
+    <string name="confirm_approve">אישור</string>
+    <string name="confirm_delete_file">אני עומד למחוק את %1$s. לאשר?</string>
+    <string name="confirm_generic">אני עומד לבצע: %1$s. לאשר?</string>
+
+    <string name="permission_mic_title">נדרשת הרשאת מיקרופון</string>
+    <string name="permission_mic_body">כדי לדבר אל העוזר, האפליקציה זקוקה לגישה למיקרופון. ההקלטה מעובדת על המכשיר בלבד ואינה נשלחת לאף שרת.</string>
+    <string name="permission_grant">אישור הרשאה</string>
+    <string name="permission_denied">ההרשאה נדחתה. ניתן לאשר אותה מהגדרות המערכת בכל עת.</string>
+
+    <string name="tool_result_done">בוצע</string>
+    <string name="tool_result_failed">הפעולה נכשלה</string>
+    <string name="tool_result_not_supported">הפעולה אינה נתמכת במכשיר זה</string>
+    <string name="tool_result_opened_settings">נפתח מסך ההגדרות הרלוונטי כיוון שאנדרואיד אינו מאפשר שינוי ישיר</string>
+
+    <string name="oom_error">אין מספיק זיכרון כדי לטעון את המודל הזה במכשיר הנוכחי. נסו מודל קטן יותר או הקטינו את ה-Context Size.</string>
+</resources>

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Brand -->
+    <color name="brand_primary">#4F6BFF</color>
+    <color name="brand_primary_variant">#3451D1</color>
+    <color name="brand_secondary">#00C9A7</color>
+
+    <!-- Light theme -->
+    <color name="background_light">#F7F8FC</color>
+    <color name="surface_light">#FFFFFF</color>
+    <color name="on_surface_light">#1A1C27</color>
+    <color name="on_surface_variant_light">#5B5F73</color>
+
+    <!-- Dark theme -->
+    <color name="background_dark">#0F1117</color>
+    <color name="surface_dark">#1A1D29</color>
+    <color name="on_surface_dark">#EDEEF4</color>
+    <color name="on_surface_variant_dark">#A4A8BD</color>
+
+    <!-- Chat bubbles -->
+    <color name="bubble_user">#4F6BFF</color>
+    <color name="bubble_user_text">#FFFFFF</color>
+    <color name="bubble_assistant_light">#EEF0F7</color>
+    <color name="bubble_assistant_dark">#262A3B</color>
+
+    <color name="error">#E5484D</color>
+    <color name="warning">#F5A623</color>
+    <color name="success">#12B76A</color>
+
+    <color name="splash_background">#0F1117</color>
+</resources>

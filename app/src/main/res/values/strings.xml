@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">AI Local</string>
+
+    <string name="nav_chat">Chat</string>
+    <string name="nav_conversations">Conversations</string>
+    <string name="nav_actions">Actions</string>
+    <string name="nav_models">Models</string>
+    <string name="nav_settings">Settings</string>
+
+    <string name="chat_input_hint">Type a message…</string>
+    <string name="chat_send">Send</string>
+    <string name="chat_mic">Voice input</string>
+    <string name="chat_stop">Stop</string>
+    <string name="chat_thinking">Thinking…</string>
+    <string name="chat_transcribing">Transcribing…</string>
+    <string name="chat_no_model">No model selected. Go to the Models screen to choose a GGUF file.</string>
+    <string name="chat_new_conversation">New conversation</string>
+
+    <string name="models_title">Select Model</string>
+    <string name="models_pick_file">Pick GGUF file</string>
+    <string name="models_active">Active model</string>
+    <string name="models_none_active">No model loaded</string>
+    <string name="models_load">Load model</string>
+    <string name="models_unload">Unload model</string>
+    <string name="models_loading">Loading model…</string>
+    <string name="models_size">Size</string>
+    <string name="models_location">Location</string>
+    <string name="models_family">Model family</string>
+    <string name="models_context_length">Context length</string>
+    <string name="models_unsupported">This model is not supported by the engine. Try a different GGUF file.</string>
+    <string name="models_load_failed">Failed to load model: %1$s</string>
+    <string name="models_empty_state">No model selected yet. Tap below to pick a GGUF file from storage.</string>
+
+    <string name="settings_title">Settings</string>
+    <string name="settings_llm_section">Model parameters</string>
+    <string name="settings_temperature">Temperature</string>
+    <string name="settings_top_p">Top P</string>
+    <string name="settings_top_k">Top K</string>
+    <string name="settings_max_tokens">Max Tokens</string>
+    <string name="settings_context_size">Context Size</string>
+    <string name="settings_threads">Threads</string>
+    <string name="settings_batch_size">Batch Size</string>
+    <string name="settings_seed">Seed</string>
+    <string name="settings_system_prompt">System Prompt</string>
+    <string name="settings_stats_section">Runtime stats</string>
+    <string name="settings_tokens_per_sec">Tokens/sec</string>
+    <string name="settings_load_time">Model load time</string>
+    <string name="settings_gen_time">Generation time</string>
+    <string name="settings_mem_usage">Estimated memory usage</string>
+    <string name="settings_tts_section">Text-to-Speech</string>
+    <string name="settings_tts_enabled">Enable speech output</string>
+    <string name="settings_tts_rate">Speech rate</string>
+    <string name="settings_tts_pitch">Pitch</string>
+    <string name="settings_tts_voice">Voice selection</string>
+    <string name="settings_tts_no_hebrew">No Hebrew voice found on this device. You can install one from the system Text-to-Speech settings.</string>
+    <string name="settings_stt_section">Speech-to-Text</string>
+    <string name="settings_stt_engine">Speech recognition engine</string>
+    <string name="settings_reset_defaults">Reset to defaults</string>
+
+    <string name="conversations_title">Conversations</string>
+    <string name="conversations_search_hint">Search conversations…</string>
+    <string name="conversations_rename">Rename</string>
+    <string name="conversations_delete">Delete</string>
+    <string name="conversations_export">Export</string>
+    <string name="conversations_import">Import</string>
+    <string name="conversations_delete_all">Delete all history</string>
+    <string name="conversations_empty">No saved conversations yet.</string>
+
+    <string name="actions_title">Actions</string>
+    <string name="actions_apps_category">Apps</string>
+    <string name="actions_system_category">System</string>
+    <string name="actions_media_category">Media</string>
+    <string name="actions_time_category">Time &amp; Reminders</string>
+    <string name="actions_device_category">Device Info</string>
+    <string name="actions_files_category">Files</string>
+
+    <string name="confirm_title">Confirm action</string>
+    <string name="confirm_cancel">Cancel</string>
+    <string name="confirm_approve">Confirm</string>
+    <string name="confirm_delete_file">I\'m about to delete %1$s. Confirm?</string>
+    <string name="confirm_generic">I\'m about to perform: %1$s. Confirm?</string>
+
+    <string name="permission_mic_title">Microphone permission needed</string>
+    <string name="permission_mic_body">To talk to the assistant, the app needs microphone access. Audio is processed entirely on-device and never sent to a server.</string>
+    <string name="permission_grant">Grant permission</string>
+    <string name="permission_denied">Permission denied. You can grant it anytime from system settings.</string>
+
+    <string name="tool_result_done">Done</string>
+    <string name="tool_result_failed">Action failed</string>
+    <string name="tool_result_not_supported">This action is not supported on this device</string>
+    <string name="tool_result_opened_settings">Opened the relevant settings screen since Android does not allow a direct change</string>
+
+    <string name="oom_error">Not enough memory to load this model on the current device. Try a smaller model or reduce the Context Size.</string>
+</resources>

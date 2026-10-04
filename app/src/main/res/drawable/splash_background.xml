@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:drawable="@color/splash_background" />
+    <item
+        android:width="140dp"
+        android:height="140dp"
+        android:gravity="center">
+        <vector android:width="140dp" android:height="140dp" android:viewportWidth="24" android:viewportHeight="24">
+            <path
+                android:fillColor="#4F6BFF"
+                android:pathData="M12,2 C6.48,2 2,6.48 2,12 C2,17.52 6.48,22 12,22 C17.52,22 22,17.52 22,12 C22,6.48 17.52,2 12,2 Z" />
+            <path
+                android:fillColor="#FFFFFF"
+                android:pathData="M12,6.5 C9.52,6.5 7.5,8.52 7.5,11 C7.5,12.86 8.64,14.45 10.25,15.13 L10.25,16.5 C10.25,16.91 10.59,17.25 11,17.25 L13,17.25 C13.41,17.25 13.75,16.91 13.75,16.5 L13.75,15.13 C15.36,14.45 16.5,12.86 16.5,11 C16.5,8.52 14.48,6.5 12,6.5 Z M11,18.5 L13,18.5 L13,19.25 C13,19.66 12.66,20 12.25,20 L11.75,20 C11.34,20 11,19.66 11,19.25 L11,18.5 Z" />
+        </vector>
+    </item>
+</layer-list>
