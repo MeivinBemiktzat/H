@@ -160,7 +160,3 @@ class LlamaEngine {
         )
     }
 }
-
-private fun kotlinx.coroutines.CoroutineScope.launch(
-    block: suspend kotlinx.coroutines.CoroutineScope.() -> Unit
-) = kotlinx.coroutines.launch(block = block)
