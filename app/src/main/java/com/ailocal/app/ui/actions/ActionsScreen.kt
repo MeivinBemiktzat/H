@@ -26,7 +26,7 @@ import java.util.Locale
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun ActionsScreen() {
-    val grouped = ActionCategory.entries.associateWith { ActionRegistry.byCategory(it) }
+    val grouped = ActionCategory.values().associateWith { ActionRegistry.byCategory(it) }
 
     Column(Modifier.fillMaxSize()) {
         TopAppBar(title = { Text(stringResource(R.string.actions_title)) })
