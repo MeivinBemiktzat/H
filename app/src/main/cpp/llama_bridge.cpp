@@ -33,6 +33,7 @@ struct EngineHandle {
     llama_context* ctx = nullptr;
     std::atomic<bool> cancelRequested{false};
     int contextSize = 0;
+    uint32_t seed = LLAMA_DEFAULT_SEED;
 };
 
 std::mutex g_initMutex;
@@ -101,7 +102,10 @@ Java_com_ailocal_app_llm_LlamaBridge_nativeLoadModel(
     ctxParams.n_threads = jThreads > 0 ? jThreads : 4;
     ctxParams.n_threads_batch = ctxParams.n_threads;
     ctxParams.n_batch = static_cast<uint32_t>(jBatchSize > 0 ? jBatchSize : 512);
-    ctxParams.seed = static_cast<uint32_t>(jSeed);
+    // Note: seed is no longer part of llama_context_params in current
+    // llama.cpp - it is applied via the sampler chain instead (see
+    // llama_sampler_init_dist in nativeGenerate below), which is where
+    // jSeed is actually used.
 
     llama_context* ctx = llama_new_context_with_model(model, ctxParams);
     if (ctx == nullptr) {
@@ -114,6 +118,9 @@ Java_com_ailocal_app_llm_LlamaBridge_nativeLoadModel(
     handle->model = model;
     handle->ctx = ctx;
     handle->contextSize = static_cast<int>(ctxParams.n_ctx);
+    // jSeed < 0 (e.g. -1, the app's "random seed" sentinel) maps to
+    // llama.cpp's own "pick a random seed" sentinel.
+    handle->seed = jSeed >= 0 ? static_cast<uint32_t>(jSeed) : LLAMA_DEFAULT_SEED;
 
     return reinterpret_cast<jlong>(handle);
 }
@@ -139,9 +146,13 @@ Java_com_ailocal_app_llm_LlamaBridge_nativeGetModelInfo(JNIEnv* env, jobject /*t
     int64_t nParams = static_cast<int64_t>(llama_model_n_params(handle->model));
     int32_t vocabSize = llama_n_vocab(handle->model);
 
-    char quantBuf[64] = {0};
-    const char* quantDesc = llama_model_quant_desc(handle->model);
-    std::string quantization = quantDesc != nullptr ? std::string(quantDesc) : "unknown";
+    // llama_model_quant_desc() is not part of llama.cpp's stable public API
+    // and has moved/disappeared across versions. llama_model_desc() is
+    // stable and already returns a human-readable "<arch> <size> <quant>"
+    // string (e.g. "qwen2 0.5B Q4_K_M"), which covers what the UI needs.
+    char descBuf[256] = {0};
+    llama_model_desc(handle->model, descBuf, sizeof(descBuf));
+    std::string quantization = descBuf[0] != '\0' ? std::string(descBuf) : "unknown";
 
     std::ostringstream json;
     json << "{"
@@ -210,7 +221,7 @@ Java_com_ailocal_app_llm_LlamaBridge_nativeGenerate(
     llama_sampler_chain_add(sampler, llama_sampler_init_top_k(jTopK > 0 ? jTopK : 40));
     llama_sampler_chain_add(sampler, llama_sampler_init_top_p(jTopP > 0 ? jTopP : 0.9f, 1));
     llama_sampler_chain_add(sampler, llama_sampler_init_temp(jTemperature > 0 ? jTemperature : 0.7f));
-    llama_sampler_chain_add(sampler, llama_sampler_init_dist(static_cast<uint32_t>(LLAMA_DEFAULT_SEED)));
+    llama_sampler_chain_add(sampler, llama_sampler_init_dist(handle->seed));
 
     while (generated < maxTokens) {
         if (handle->cancelRequested.load()) {
